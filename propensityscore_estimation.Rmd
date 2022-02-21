@@ -52,12 +52,8 @@ ggplot(data = ns, aes(x = ps)) +
   aes(y = ..density..),
   color = "white",
   alpha = 0.5,
-  binwidth = 0.01
-  #position = position_dodge(width = 0.01/2)
-  ) + theme_bw() +
-  guides(colour = FALSE,
-         linetype = FALSE)
-
+  binwidth = 0.01) +
+  theme_bw() 
 ```
 
 
