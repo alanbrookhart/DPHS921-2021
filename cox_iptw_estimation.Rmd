@@ -50,7 +50,7 @@ print(table1, smd = TRUE, printToggle = FALSE) %>% kable()
 
 A logistic regression can be used to estimate the propensity scores using the $\tt{glm}$ function.  The parameter estimates from the fitted model are generated using the $\tt{summary}$ function.  The estimates are log odds ratios (ORs).  Exponentiating the ORs gives approximate risk ratios (because statin treatment) is rare.  We include in the PS models the variables that we know are predictors of CV outcomes and thus potentially true confounders.
 ```{r}
-ps_model = glm(statin_use ~ age + region + asthma + cancer + cerebrovascular_disease + chronic_kidney_disease + heart_failure + tobacco_use + obesity + mi + chronic_pulmonary_disease + depression + diabetes + hyperlipidemia + hypertension + coronory_artery_disease + sex + race, data = sta, family = binomial)
+ps_model = glm(statin_use ~ age + region + asthma + cancer + aspirin_use + arthritis + cerebrovascular_disease + chronic_kidney_disease + heart_failure + tobacco_use + obesity + mi + chronic_pulmonary_disease + depression + diabetes + hypertension + coronory_artery_disease + sex + race, data = sta, family = binomial)
 
 summary(ps_model)
 ```
