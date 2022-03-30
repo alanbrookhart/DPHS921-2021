@@ -149,7 +149,7 @@ summary(cox_unadjusted)
 
 ## Adjusted Cox PH model
 
-However, after applying IPTWs to the Cox model, the association between statin use and hazard of the composite event is sharply attenuated.  Note that when using wewights, we need to use the "robust" estimator of the SE.
+However, after applying IPTWs to the Cox model, the estimated effect of statin intiation and hazard of the composite event is attenuated.  Note that when using weights, we need to use the "robust" estimator of the SE.
 ```{r}
 cox_adjusted <- survival::coxph(Surv(event_time, event_indicator) ~ statin_use, weight = iptw, data = sta_analy)
 summary(cox_adjusted)
